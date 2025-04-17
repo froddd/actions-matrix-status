@@ -12,7 +12,7 @@ jobs:
         index: [1, 2]
     steps:
       - run: |
-          if [ "${{ matrix.index }}" == "1" ]
+          if [ "${{ matrix.index }}" == "9" ]
           then
             echo "error"
             exit 1
