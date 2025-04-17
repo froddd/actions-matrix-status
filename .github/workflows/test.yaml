@@ -12,7 +12,13 @@ jobs:
         index: [1, 2]
     steps:
       - run: |
-          ([ "${{ matrix.index }}" == "1" ] && echo "error" && exit 1) || echo "success"
+          if [ "${{ matrix.index }}" == "1" ]
+          then
+            echo "error"
+            exit 1
+          else
+            echo "success"
+          fi
 
   check_status:
     runs-on: ubuntu-latest
