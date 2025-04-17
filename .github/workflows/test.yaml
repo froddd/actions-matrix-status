@@ -18,7 +18,7 @@ jobs:
   check_status:
     runs-on: ubuntu-latest
     needs: foo
-    if: always()
+    if: ${{ always() && needs.foo.result == 'failure' }}
     steps:
       - run: echo ${{ needs.foo.result }}
 
